@@ -120,6 +120,6 @@ function pedirOrcamento(nomeCarro) {
   <footer>
     <a class="marca marca-rodape" href="#inicio"><span class="marca-simbolo">✦</span><span>CLÁSSICOS <em>DO AMOR</em></span></a>
     <p>O charme dos clássicos para celebrar o amor.</p>
-    <span class="copyright">© 2026 Clássicos do Amor</span>
+    <span class="copyright">© 2026 Clássicos do Amor <br> Criado e Desenvolvido por Irene Bittelbrunn.</span>
   </footer>
 </template>
