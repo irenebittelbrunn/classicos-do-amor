@@ -94,7 +94,6 @@ function pedirOrcamento(nomeCarro) {
           </div>
         </article>
       </div>
-      <p class="aviso-fotos">Adicione suas fotos reais na pasta <strong>public/carros</strong> usando os nomes indicados no projeto.</p>
     </section>
 
     <section class="frase-destaque">
