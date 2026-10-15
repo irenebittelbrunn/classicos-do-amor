@@ -7,20 +7,20 @@ const carros = [
   {
     nome: 'Ford Galaxie 500',
     tipo: 'Elegância que atravessa gerações',
-    imagem: 'public/carros/imgs/WhatsApp Image 2026-10-13 at 15.08.56 (1).jpeg',
+    imagem: '/carros/imgs/ford-galaxie-500.jpeg',
     alt: 'Ford Galaxie 500 clássico'
   },
   {
     nome: 'Chevrolet Pick-up C-10',
     tipo: 'Charme rústico com muita personalidade',
-    imagem: 'public/carros/imgs/WhatsApp Image 2026-10-13 at 15.08.56.jpeg',
+    imagem: '/carros/imgs/chevrolet-c10.jpeg',
     alt: 'Chevrolet Pick-up C-10 clássica'
   },
   {
     nome: 'Chevrolet Blazer',
     tipo: 'Elegância clássica e momentos que ficam para sempre',
-    imagem: 'public/carros/imgs/WhatsApp Image 2026-10-13 at 15.08.57.jpeg',
-    alt: 'Chevrolet Pick-up C-10 clássica'
+    imagem: '/carros/imgs/blazer-antiga.jpeg',
+    alt: 'Chevrolet Blazer clássica'
   }
 ]
 
