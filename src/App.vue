@@ -112,7 +112,7 @@ function pedirOrcamento(nomeCarro) {
       <div class="contato-acoes">
         <a class="botao botao-dourado" href="https://wa.me/5547992801143" target="_blank" rel="noreferrer">Falar pelo WhatsApp ↗</a>
         <a href="https://www.instagram.com/classicosdoamor/" target="_blank" rel="noreferrer">Instagram ↗</a>
-        <a href="https://www.facebook.com/profile.php?id=61595338452657&sk=about_details&locale=pt_BR" target="_blank" rel="noreferrer">Facebook ↗</a>
+        <a href="https://www.facebook.com/profile.php?id=61595360321247" target="_blank" rel="noreferrer">Facebook ↗</a>
       </div>
     </section>
   </main>
