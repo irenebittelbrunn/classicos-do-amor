@@ -29,7 +29,7 @@ function fecharMenu() {
 }
 
 function pedirOrcamento(nomeCarro) {
-  const telefone = '5547999314278'
+  const telefone = '5547992801143'
   const mensagem = `Olá! Gostaria de saber mais sobre o aluguel do ${nomeCarro} para um casamento.`
   window.open(`https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`, '_blank')
 }
@@ -106,13 +106,13 @@ function pedirOrcamento(nomeCarro) {
     <section id="contato" class="contato">
       <div>
         <p class="sobretitulo">VAMOS FAZER PARTE DESSE MOMENTO?</p>
-        <h2>Seu grande dia<br /><span>começa aqui.</span></h2>
+        <h2>Seu grande dia<br /><span>começa aqui.</span> <br>Joinville/SC📍</h2>
         <p>Converse com a gente e descubra qual clássico vai acompanhar sua história.</p>
       </div>
       <div class="contato-acoes">
-        <a class="botao botao-dourado" href="https://wa.me/5547999314278" target="_blank" rel="noreferrer">Falar pelo WhatsApp ↗</a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">Facebook ↗</a>
+        <a class="botao botao-dourado" href="https://wa.me/5547992801143" target="_blank" rel="noreferrer">Falar pelo WhatsApp ↗</a>
+        <a href="https://www.instagram.com/classicosdoamor/" target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a href="https://www.facebook.com/profile.php?id=61595338452657&sk=about_details&locale=pt_BR" target="_blank" rel="noreferrer">Facebook ↗</a>
       </div>
     </section>
   </main>
