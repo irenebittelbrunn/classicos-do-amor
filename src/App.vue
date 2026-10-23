@@ -40,6 +40,7 @@ function pedirOrcamento(nomeCarro) {
     <a class="marca" href="#inicio" @click="fecharMenu">
       <span class="marca-simbolo">✦</span>
       <span>CLÁSSICOS <em>DO AMOR</em></span>
+      <p>Joinville(SC)</p>
     </a>
 
     <button class="menu-botao" @click="menuAberto = !menuAberto" aria-label="Abrir menu">☰</button>
@@ -123,3 +124,6 @@ function pedirOrcamento(nomeCarro) {
     <span class="copyright">© 2026 Clássicos do Amor <br> Criado e Desenvolvido por Irene Bittelbrunn.</span>
   </footer>
 </template>
+<style>
+
+</style>
