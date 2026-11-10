@@ -79,6 +79,40 @@ function pedirOrcamento(nomeCarro) {
     "_blank",
   );
 }
+
+const formContato = ref({
+  nome: '',
+  email: '',
+  telefone: '',
+  evento: '',
+  data: '',
+  local: '',
+  mensagem: ''
+})
+
+function enviarContato() {
+  const dados = formContato.value
+
+  const texto = `
+Olá! Vim pelo site Clássicos do Amor e gostaria de solicitar um orçamento.
+
+Nome: ${dados.nome}
+E-mail: ${dados.email}
+WhatsApp: ${dados.telefone}
+Evento: ${dados.evento}
+Data: ${dados.data || 'Não informada'}
+Local: ${dados.local || 'Não informado'}
+
+Mensagem: ${dados.mensagem || 'Nenhuma mensagem adicional.'}
+  `
+
+  const numero = '5547992801143'
+
+  const link = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`
+
+  window.open(link, '_blank')
+}
+
 </script>
 
 <template>
@@ -104,6 +138,7 @@ function pedirOrcamento(nomeCarro) {
       <a class="nav-contato" href="#contato" @click="fecharMenu">
         Fale conosco
       </a>
+      <a href="#duvidas">Dúvidas frequentes</a>
     </nav>
   </header>
 
@@ -257,6 +292,175 @@ function pedirOrcamento(nomeCarro) {
       <small>CLÁSSICOS DO AMOR</small>
     </section>
 
+<section id="duvidas" class="duvidas">
+
+  <div class="duvidas-container">
+
+    <div class="duvidas-lista">
+      <h1>Dúvidas Frequentes</h1>
+
+      <details class="faq-item">
+        <summary>Quais tipos de eventos vocês atendem?</summary>
+        <p>Atendemos casamentos, festas de 15 anos,
+        formaturas, aniversários, ensaios fotográficos
+        e outras ocasiões especiais.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como faço para reservar um veículo?</summary>
+        <p>Entre em contato pelo WhatsApp ou formulário,
+        informe a data e o tipo de evento e consulte
+        a disponibilidade do veículo desejado.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Com quanto tempo de antecedência devo reservar?</summary>
+        <p>Recomendamos entrar em contato com antecedência
+        para aumentar as chances de encontrar o veículo
+        disponível na data desejada.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Posso escolher o carro que quero?</summary>
+        <p>Sim! Você pode conhecer nossos veículos e
+        escolher seu preferido, conforme disponibilidade.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Os carros podem ser decorados?</summary>
+        <p>Consulte as possibilidades de decoração e
+        personalização durante o orçamento.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Vocês atendem outras cidades?</summary>
+        <p>Consulte nossa disponibilidade de atendimento
+        para sua cidade e as condições de deslocamento.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Como posso solicitar um orçamento?</summary>
+        <p>Você pode preencher nosso formulário de contato
+        ou falar diretamente pelo WhatsApp.</p>
+      </details>
+
+    </div>
+
+    <div class="duvidas-texto">
+      <span>ESTAMOS AQUI PARA AJUDAR</span>
+
+      <h2>Ficou com alguma dúvida?</h2>
+
+      <p>
+        Queremos que sua experiência seja especial
+        desde o primeiro contato. Confira nossas
+        respostas ou fale diretamente conosco.
+      </p>
+
+      <a href="#contato" class="duvidas-botao">
+        Fale conosco
+      </a>
+
+      <div class="frase-duvidas">
+        "Cada detalhe merece fazer parte de uma
+        lembrança inesquecível."
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="contato" class="contato">
+  <div class="contato-titulo">
+    <span>CLÁSSICOS DO AMOR</span>
+    <h2>Vamos fazer parte da sua história?</h2>
+    <p>
+      Seja qual for a ocasião, temos um carro especial
+      para tornar seu momento ainda mais inesquecível.
+    </p>
+  </div>
+
+  <form class="formulario" @submit.prevent="enviarContato">
+
+    <div class="campo">
+      <label>Nome completo</label>
+      <input
+        v-model="formContato.nome"
+        type="text"
+        placeholder="Digite seu nome"
+        required
+      >
+    </div>
+
+    <div class="campo">
+      <label>E-mail</label>
+      <input
+        v-model="formContato.email"
+        type="email"
+        placeholder="seuemail@email.com"
+      >
+    </div>
+
+    <div class="campo">
+      <label>WhatsApp</label>
+      <input
+        v-model="formContato.telefone"
+        type="tel"
+        placeholder="(47) 99999-9999"
+        required
+      >
+    </div>
+
+    <div class="campo">
+      <label>Tipo de evento</label>
+      <select v-model="formContato.evento" required>
+        <option value="">Selecione seu evento</option>
+        <option>Casamento</option>
+        <option>Festa de 15 anos / Debutante</option>
+        <option>Formatura</option>
+        <option>Ensaio fotográfico</option>
+        <option>Aniversário</option>
+        <option>Bodas</option>
+        <option>Outro evento</option>
+      </select>
+    </div>
+
+    <div class="campo">
+      <label>Data do evento</label>
+      <input
+        v-model="formContato.data"
+        type="date"
+      >
+    </div>
+
+    <div class="campo">
+      <label>Local do evento</label>
+      <input
+        v-model="formContato.local"
+        type="text"
+        placeholder="Cidade ou endereço"
+      >
+    </div>
+
+    <div class="campo campo-mensagem">
+      <label>Conte mais sobre o que procura</label>
+      <textarea
+        v-model="formContato.mensagem"
+        placeholder="Conte um pouco sobre seu evento..."
+        rows="5"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="botao-enviar">
+      Solicitar orçamento
+    </button>
+
+  </form>
+</section>
+
+
     <section id="contato" class="contato">
       <div>
         <p class="sobretitulo">
@@ -320,6 +524,7 @@ function pedirOrcamento(nomeCarro) {
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&display=swap');
 @keyframes aparecerFoto {
   from {
     opacity: 0.5;
@@ -428,4 +633,345 @@ function pedirOrcamento(nomeCarro) {
   object-fit: contain;
   display: block;
 }
+
+.contato {
+  background: #f3eee6;
+  padding: 80px 20px;
+  color: #40352b;
+}
+
+.contato-titulo {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.contato-titulo span {
+  color: #a88955;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.contato-titulo h2 {
+  font-size: 32px;
+  margin: 15px 0;
+}
+
+.contato-titulo p {
+  color: #75695e;
+  line-height: 1.7;
+}
+
+.formulario {
+  max-width: 750px;
+  margin: auto;
+  background: #fff;
+  padding: 35px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.campo label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 13px;
+  border: 1px solid #ddd4c8;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 14px;
+  background: #fff;
+  outline: none;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  border-color: #a88955;
+}
+
+.campo-mensagem {
+  grid-column: 1 / -1;
+}
+
+.botao-enviar {
+  grid-column: 1 / -1;
+  padding: 15px;
+  background: #756044;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-enviar:hover {
+  background: #a88955;
+}
+
+@media (max-width: 600px) {
+  .formulario {
+    grid-template-columns: 1fr;
+    padding: 22px;
+  }
+
+  .campo-mensagem,
+  .botao-enviar {
+    grid-column: 1;
+  }
+
+  .contato-titulo h2 {
+    font-size: 26px;
+  }
+}
+.contato-titulo {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.contato-titulo h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.contato-titulo p {
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  margin: 15px auto 0;
+  line-height: 1.8;
+}
+.formulario {
+  width: 100%;
+  max-width: 850px;
+  box-sizing: border-box;
+  padding: 45px;
+  gap: 25px;
+  border-radius: 10px;
+}
+
+.campo input,
+.campo select {
+  min-height: 50px;
+  font-size: 15px;
+  padding: 15px;
+}
+
+.campo textarea {
+  min-height: 140px;
+  font-size: 15px;
+  padding: 15px;
+}
+
+.campo label {
+  font-size: 15px;
+}
+
+.botao-enviar {
+  min-height: 52px;
+  font-size: 16px;
+}
+@media (max-width: 600px) {
+  .formulario {
+    padding: 22px;
+    gap: 18px;
+  }
+
+  .contato {
+    padding: 55px 18px;
+  }
+
+  .contato-titulo h2 {
+    font-size: 27px;
+  }
+}
+
+
+
+.duvidas {
+  background: #173b31;
+  padding: 90px 20px;
+  color: #f3eee6;
+}
+
+.duvidas-container {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 65px;
+  align-items: center;
+}
+
+/* PERGUNTAS À ESQUERDA */
+
+.duvidas-lista {
+  width: 100%;
+}
+
+.faq-item {
+  background: #f3eee6;
+  margin-bottom: 13px;
+  padding: 22px 25px;
+  border-radius: 5px;
+  border: 1px solid #d9cbb8;
+  transition: 0.3s;
+}
+
+.faq-item:hover {
+  background: #fff;
+  transform: translateX(4px);
+}
+
+.faq-item summary {
+  color: #203d32;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  color: #a88955;
+  font-size: 23px;
+  font-weight: 400;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+}
+
+.faq-item p {
+  color: #75695e;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 18px 0 0;
+  padding-top: 15px;
+  border-top: 1px solid #ddd2c4;
+}
+
+/* TEXTO À DIREITA */
+
+.duvidas-texto {
+  padding: 20px 0;
+}
+
+.duvidas-texto span {
+  color: #c5a775;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.duvidas-texto h2 {
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 20px 0;
+  color: #f3eee6;
+}
+
+.duvidas-texto p {
+  color: #d4d1c7;
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 30px;
+}
+
+.duvidas-botao {
+  display: inline-block;
+  background: #a88955;
+  color: #fff;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.duvidas-botao:hover {
+  background: #c5a775;
+}
+
+.frase-duvidas {
+  border-left: 2px solid #a88955;
+  padding-left: 18px;
+  margin-top: 45px;
+  color: #c5a775;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* CELULAR */
+
+@media (max-width: 750px) {
+  .duvidas {
+    padding: 60px 20px;
+  }
+
+  .duvidas-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .duvidas-texto {
+    grid-row: 1;
+    text-align: center;
+  }
+
+  .duvidas-texto h2 {
+    font-size: 30px;
+  }
+
+  .frase-duvidas {
+    text-align: left;
+  }
+}
+.duvidas-lista h1 {
+  color: #f3eee6;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 46px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+.duvidas-lista h1::after {
+  content: "";
+  display: block;
+  width: 75px;
+  height: 2px;
+  background: #c5a775;
+  margin-top: 12px;
+}
+
 </style>
