@@ -135,10 +135,10 @@ Mensagem: ${dados.mensagem || 'Nenhuma mensagem adicional.'}
       <a href="#inicio" @click="fecharMenu">Início</a>
       <a href="#carros" @click="fecharMenu">Nossos carros</a>
       <a href="#historia" @click="fecharMenu">Nossa história</a>
+      <a href="#duvidas">Dúvidas frequentes</a>
       <a class="nav-contato" href="#contato" @click="fecharMenu">
         Fale conosco
       </a>
-      <a href="#duvidas">Dúvidas frequentes</a>
     </nav>
   </header>
 
